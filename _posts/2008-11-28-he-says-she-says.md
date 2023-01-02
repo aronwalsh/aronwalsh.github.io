@@ -1,0 +1,7 @@
+---
+layout: post
+title: He says, she says...
+date: 2008-11-28 15:56:35.000000000 +00:00
+type: post
+---
+<p>With funding applications, it’s hard to know what to expect. There’s always a danger that the reviewers aren’t too familiar with the topic at hand, or conversely, that they are experts, with a strong bias against what you propose to do. It takes some skill and effort to make an application accessible and detailed to all potential audiences. What you don’t expect is blatant contradictions in the feedback from the reviewers, e.g. strength: “The proposal is ambitious”; weakness: “The excess of ambition”. The overall result in this instance was positive, but I find it strange that in the funding of young researchers, the hope of broadening one’s research area is taken as a potential risk. For a PhD program, you generally exist in a specific subsection of an already niche scientific discipline, so expanding your interests is both beneficial and necessary. Nonetheless, in this case I was fortunate and the project should be funded... goodbye Denver, hello London! Of course, the time I pick to leave the Department of Energy is when a Nobel Laureate is appointed as the new Secretary of Energy and the Obama transition team make a strong commitment to renewable energy research. Good times are ahead for <a title="http://en.wikipedia.org/wiki/National_Renewable_Energy_Laboratory" href="http://en.wikipedia.org/wiki/National_Renewable_Energy_Laboratory">NREL</a>.</p>

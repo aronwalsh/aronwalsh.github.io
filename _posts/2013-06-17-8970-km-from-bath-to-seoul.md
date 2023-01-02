@@ -1,0 +1,10 @@
+---
+layout: post
+title: 8970 km from Bath to Seoul
+date: 2013-06-17 07:06:48.000000000 +01:00
+---
+<p>Last year I <a href="http://thelostelectron.wordpress.com/2012/10/27/gangnam-science/">wrote</a> about my on-going research collaborations in South Korea. I have been fortunate enough to return this year, funded through the <a href="http://www.bath.ac.uk/news/2012/03/06/colin-grant/">Office of Internationalisation</a> at my University. I have just posted a <a href="http://blogs.bath.ac.uk/cg482/2013/06/16/neither-bottom-up-nor-top-down-the-value-of-sceptics-guest-blog/">guest blog </a>on the formal delegation activities.</p>
+<p>My sincere thanks (again) to the <a href="http://yonseimtg.weebly.com/">Materials Theory Group</a> of Aloysius Soon. Last week, they treated myself and <a href="http://people.bath.ac.uk/aj252/">Adam Jackson</a> incredibly well. We held our first joint research workshop (<a href="http://mtg-mice-workshop.weebly.com/mice-jun-2013.html">MICE</a>), which will be followed up in September when four of their group travel to the UK. We also visited <a href="http://kchannel.kaist.ac.kr/CH832-000">KAIST</a> and <a href="http://cqmp.snu.ac.kr/jyu/pw/index.php">SNU</a>. Back to the real world now, with a group meeting at 9:15 am this morning!</p>
+<p style="text-align:center;"><a href="http://thelostelectron.files.wordpress.com/2013/06/img_6540.jpg"><img class="size-medium wp-image-619 aligncenter" alt="IMG_6540" src="{{ site.baseurl }}/assets/2013/06/img_6540.jpg?w=300" width="300" height="225" /></a>(Welcome to Yonsei)</p>
+<p style="text-align:center;"><a href="http://thelostelectron.files.wordpress.com/2013/06/img_6523.jpg"><img class="aligncenter" alt="IMG_6523" src="{{ site.baseurl }}/assets/2013/06/img_6523.jpg?w=300" width="300" height="225" /></a>(소녀시대)</p>
+<p style="text-align:center;"><a href="http://thelostelectron.files.wordpress.com/2013/06/img_6439.jpg"><img class="aligncenter" alt="IMG_6439" src="{{ site.baseurl }}/assets/2013/06/img_6439.jpg?w=300" width="300" height="225" /></a>(Seoul City Hall)</p>

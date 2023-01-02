@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'Beckett 1954: “I arrived therefore at three totally different figures, without
+  ever knowing which of them was right”'
+date: 2009-08-30 15:07:58.000000000 +01:00
+---
+<a href="http://thelostelectron.files.wordpress.com/2012/04/oxford.png"><img class="alignleft size-full wp-image-102" title="Oxford" src="{{ site.baseurl }}/assets/2009/08/oxford.png" alt="" width="289" height="217" /></a>
+
+It would be hard to envisage anything more 'academic' than spending a week in one of Oxford's oldest colleges. While at one time, the lack of television may have resulted in plenty of time for self reflection, high-speed ethernet ensures distractions are there when required.
+	
+<p> The event was a workshop on "Density functional theory for experimental spectroscopy", which could easily be subtitled "CASTEP 101", with <a title="http://www.castep.org/" href="http://www.castep.org/">CASTEP</a> being the UK's premier plane wave density functional theory code. They definitely have some nice spectroscopic functionalities that go beyond what VASP can do natively; some healthy competition is always a good thing. One extra advantage of CASTEP is that, although licensed to Accelrys for use in Materials Studio, it remains free to UK-based academics.</p>
+<p>After working through practicals on solid-state NMR, core level excitations, and vibrational spectra (using density functional perturbation theory), I got a nice feel for the basic usage of CASTEP. The biggest current drawback is that different pseudopotentials are required for difference functionalities, i.e. a mix of norm-conserving, ultra-soft and PAW may be needed, although their new on-the-fly pseudopotential generation is trying to overcome this. On the positive side, their implementation of hybrid functionals seems quite robust, making good use of symmetry and enabling non-self consistent band structure calculations (unlike VASP).</p>
+<p>A shiny new PRL on the origins of p-type behaviour in cuprous oxide is <a title="http://link.aps.org/doi/10.1103/PhysRevLett.103.096405" href="http://link.aps.org/doi/10.1103/PhysRevLett.103.096405">here</a>. Now it's time to prepare for two September conferences in <a title="http://www.dfrl.ucl.ac.uk/CCP5/ccp5.htm" href="http://www.dfrl.ucl.ac.uk/CCP5/ccp5.htm">London</a> and <a title="http://www.tyndall.ie/research/theory-and-modelling/oxides_workshop/" href="http://www.tyndall.ie/research/theory-and-modelling/oxides_workshop/">Dublin</a>.</p>

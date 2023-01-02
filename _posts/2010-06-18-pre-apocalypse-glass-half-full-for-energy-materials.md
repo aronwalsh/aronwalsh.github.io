@@ -1,0 +1,11 @@
+---
+layout: post
+title: 'Pre-apocalypse: Glass half full for energy materials?'
+date: 2010-06-18 13:50:49.000000000 +01:00
+type: post
+---
+<a href="http://thelostelectron.files.wordpress.com/2012/04/meeting.png"><img class="alignleft size-full wp-image-69" title="meeting" src="{{ site.baseurl }}/assets/2010/06/meeting.png" alt="" width="289" height="217" /></a>
+
+To tie in with last year’s Royal Society meeting on “Energy Materials to Combat Climate Change” (the audio of which is available <a title="http://royalsociety.org/2009-Energy-materials-to-combat-climate-change/" href="http://royalsociety.org/2009-Energy-materials-to-combat-climate-change/">online</a> - the Q&A makes for particularly interesting listening), we have completed an epic 78 page report in <a title="http://rsta.royalsocietypublishing.org/" href="http://rsta.royalsocietypublishing.org/">Phil. Trans. Roy. Soc.</a> both reviewing recently published work from UCL Materials Chemistry and presenting select new results on materials involved in energy storage, conversion and utilisation.
+
+<p>My own contributions were limited to giving background on photoelectrochemical hydrogen production and solar cells, as well as looking in more detail at the photocatalyst Sn2TiO4 and reviewing the defect chemistry of kesterite Cu2ZnSnS4. Looking at the range of materials covered is quite telling of what is going on our floor: Ag2O, AlN, Al2O3, BN, C, CaMnO3, CdTe, CeO2, Ce2O3, Cu2O, Cu2ZnSnS4, GaN, Ga2O3, HfO2, InN, LiBH4, SiC, Sn2TiO4, SrTiO3, TiO2, V2O5, VO2, ZnO, ZrO2. The paper has just come <a title="http://rsta.royalsocietypublishing.org/content/368/1923/3379" href="http://rsta.royalsocietypublishing.org/content/368/1923/3379">online</a>, with another dozen exciting energy-related articles in the same issue. One nice paper that appeared recently is “<a title="http://arxiv.org/abs/1004.2974" href="http://arxiv.org/abs/1004.2974">High-throughput electronic band structure calculations: challenges and tools</a>”; automating band structure calculations to build up databases and allow for systematic property screening (we’ll all be out of a job soon!). The appendix gives the conventional and primitive lattice vectors and Brillouin zones for all kinds of Bravais lattice, which is a quite useful reference.</p>

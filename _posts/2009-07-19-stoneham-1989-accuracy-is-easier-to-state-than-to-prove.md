@@ -1,0 +1,10 @@
+---
+layout: post
+title: 'Stoneham 1989: “Accuracy is easier to state than to prove”'
+date: 2009-07-19 15:16:27.000000000 +01:00
+---
+<p>Having spent seven or so years playing around with density functional theory, I’ve had some fun in the last couple of months revisiting interatomic potentials, which I haven’t really thought seriously about since my undergraduate lectures and lab-work, which included learning the history of CASCADE, HADES and all the codes (mostly spawned from <a title="http://en.wikipedia.org/wiki/Atomic_Energy_Research_Establishment" href="http://en.wikipedia.org/wiki/Atomic_Energy_Research_Establishment">Harwell</a>) that lay the groundwork for the ubiquitous <a title="https://www.ivec.org/gulp/" href="https://www.ivec.org/gulp/">GULP</a>. It’s quite funny that many of the issues emerging with the description of polaronic defects in oxides and semiconductors from modern electronic structure approaches were the subject of intense study back in the 70’s and 80’s. From reading a lot of the old literature, it has been surprising to me that atomistic simulations can go so far as to assess differences between optical and thermal excitations as well as polaron binding, hopping probabilities and redox energetics. Limitations in computer power were more than offset by numerical innovation; many of these papers contain much deeper insight that one will get from reading any state-of-the-art DFT+U or hybrid-DFT paper.</p>
+<p>A  few of my favourites:<br />
+<a title="http://prola.aps.org/abstract/PRB/v25/i2/p1006_1" href="http://prola.aps.org/abstract/PRB/v25/i2/p1006_1">“Defect energetics in α-Al2O3 and rutile TiO2”</a><br />
+<a title="http://www.informaworld.com/smpp/content~db=all~content=a762419693" href="http://www.informaworld.com/smpp/content%7Edb=all%7Econtent=a762419693">“The electronic structure of divalent transition metal oxides”</a><br />
+<a title="http://www.iop.org/EJ/abstract/0953-8984/1/40/011/" href="http://www.iop.org/EJ/abstract/0953-8984/1/40/011/">“A comparison of defect energies in MgO using Mott-Littleton and quantum mechanical procedures”</a></p>

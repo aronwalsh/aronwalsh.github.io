@@ -1,0 +1,10 @@
+---
+layout: post
+title: Hybrid perovskites go bananas?
+date: 2015-03-03 14:32:54.000000000 +00:00
+---
+<p>There have been discussions regarding hysteresis in the performance of hybrid halide perovskite solar cells since the MRS Fall Meeting in 2013 (a brave presentation from the group of Mike McGehee and supplementary slides from the presentation of Henry Snaith). Since then, there has been a flurry of papers reporting and attempting to characterise the behaviour (see a news piece in <a href="http://www.rsc.org/chemistryworld/2015/02/meteoritic-rise-perovskite-solar-cells-under-scrutiny-over-efficiencies">Chemistry World this week</a>).</p>
+<p>A related phenomenon is the low frequency dielectric dispersion of these materials (mentioned in my recent <a href="http://pubs.acs.org/doi/abs/10.1021/jp512420b">stream of consciousness</a>), where large polarisation features emerge due to build up of charge (e.g. see the<a href="http://en.wikipedia.org/wiki/Maxwell%E2%80%93Wagner%E2%80%93Sillars_polarization"> Maxwell-Wagner effect</a>).</p>
+<p>This effect reminded me of some arugments in the literature several years ago regarding the characterisation of ferroelectric materials (from <a href="http://iopscience.iop.org/0953-8984/20/19/191001">Bananas go Paralectric</a> to <a href="http://iopscience.iop.org/0953-8984/20/2/021001/">Ferroelectrics go Bananas</a>). The response observed for a banana is remarkably similar to the "<a href="http://pubs.acs.org/doi/abs/10.1021/jz5011169">giant dielectric effect</a>" reported for the (inedible) hybrid halide perovskites. Quite a chunk of literature can be rationalised through this anology: <em>"With simple experiments, the response of a banana to electric fields is revealed as characteristic for an inhomogeneous paraelectric ion conductor."</em></p>
+<p>Food for thought...</p>
+<p><a href="https://thelostelectron.files.wordpress.com/2015/03/slide1.jpg"><img class="aligncenter size-large wp-image-913" src="{{ site.baseurl }}/assets/2015/03/slide1.jpg?w=830" alt="Slide1" width="830" height="708" /></a></p>
