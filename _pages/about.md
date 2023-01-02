@@ -10,5 +10,5 @@ I work as [Professor in Materials Design](https://www.imperial.ac.uk/people/a.wa
 
 As an Associate Editor at [Journal of the American Chemical Society](https://pubs.acs.org/journal/jacsat), I covers content related to materials for energy and artificial intelligence.
 
-If you have any comments on the posts, you catch me on Mastodon at https://mstdn.social/@lonepair or contact by email.
+If you have any comments on the posts, you catch me on [Mastodon](https://mstdn.social/@lonepair) or contact me by email.
  
