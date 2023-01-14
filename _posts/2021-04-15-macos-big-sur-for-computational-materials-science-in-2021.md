@@ -19,7 +19,7 @@ Set up your <a href="https://natelandau.com/my-mac-osx-bash_profile/">zprofile</
 {% highlight ruby %}
 alias ls='ls -G -ltr'
 export TERM=xterm-color
-alias cpu='echo time $(uptime) &amp;&amp; echo $(sysctl -n hw.ncpu) cores on $(hostname)''
+alias cpu='echo time $(uptime) && echo $(sysctl -n hw.ncpu) cores on $(hostname)'
 {% endhighlight %}
 
 Later you may need C libraries that are in a non-standard location, so I find it useful to create the following link:
