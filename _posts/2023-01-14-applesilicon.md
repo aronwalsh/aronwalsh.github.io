@@ -6,9 +6,9 @@ date:   2023-01-14 16:11:22 +0000
 
 My first Apple laptop was a PowerBook running the PowerPC [G4](https://en.wikipedia.org/wiki/PowerPC_G4) processor. The transition to Intel x86 chips provided many opportunities, but they lost their edge over time to become efficient heat generators. So far, I am very impressed by the ARM [M2](https://en.wikipedia.org/wiki/Apple_silicon#Apple_M2) processor and its 20 billion transistors. It does take some effort to get everything nicely configured.
 
-<!-- wp:image -->
+<p align="center">
 <figure class="wp-block-image aligncenter"><img src="{{ site.baseurl }}/assets/2023/cpu.png" alt="CPU" /></figure>
-<!-- /wp:image -->
+</p>
 
 ## Awaken UNIX
 
@@ -27,7 +27,7 @@ Set up your [zprofile](https://craftofcoding.wordpress.com/2022/02/28/the-basics
 {% highlight ruby %}
 alias ls='ls -G -ltr'
 export TERM=xterm-color
-alias cpu='echo time $(uptime) &amp;&amp; echo $(sysctl -n hw.ncpu) cores on $(hostname)''
+alias cpu='echo time $(uptime) && echo $(sysctl -n hw.ncpu) cores on $(hostname)'
 {% endhighlight %}
 
 Later I will need C libraries that are in a non-standard location, so I find it useful to create the following link:
