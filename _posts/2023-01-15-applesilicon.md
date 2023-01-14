@@ -7,12 +7,12 @@ date:   2023-01-14 16:11:22 +0000
 My first Apple laptop was a PowerBook running the PowerPC [G4](https://en.wikipedia.org/wiki/PowerPC_G4) processor. The transition to Intel x86 chips provided many opportunities, but they lost their edge over time to become efficient heat generators. So far, I am very impressed by the ARM [M2](https://en.wikipedia.org/wiki/Apple_silicon#Apple_M2) processor and its 20 billion transistors. It does take some effort to get everything nicely configured.
 
 <!-- wp:image -->
-<figure class="wp-block-image"><img src="{{ site.baseurl }}/assets/2023/cpu.png" alt="CPU" /></figure>
+<figure class="wp-block-image aligncenter"><img src="{{ site.baseurl }}/assets/2023/cpu.png" alt="CPU" /></figure>
 <!-- /wp:image -->
 
 ## Awaken UNIX
 
-Call me lazy, but I find the App Store convenient these days. It remembers that I have downloaded standard software such as Microsoft Office, Slack, and Xcode on some other machine, so it is a one-click installation for those. Not everything is there, but it does save time.
+Call me lazy, but I find the App Store convenient. It remembers that I have downloaded standard software such as Microsoft Office, Slack, and Xcode on some other machine, so it is a one-click installation for those. Not everything is there, but it does save time.
 
 I also rely on [homebrew](https://docs.brew.sh/Installation) for package management these days. Once I have Xcode installed, it is just a one line installation and one more to install a range of packages that I will use.
 
@@ -22,7 +22,7 @@ brew install gcc openmpi scalapack fftw qd openblas hdf5 cmake
 {% endhighlight %}
 
 <em>zsh</em> is the default UNIX shell. 
-Set up your [.zprofile](https://craftofcoding.wordpress.com/2022/02/28/the-basics-of-configuring-the-z-shell-on-a-mac/), [ssh config](http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/), and [vimrc](https://github.com/amix/vimrc) files to make working faster and more comfortable.  My `.zprofile` has some basic settings such as:
+Set up your [zprofile](https://craftofcoding.wordpress.com/2022/02/28/the-basics-of-configuring-the-z-shell-on-a-mac/), [ssh config](http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/), and [vimrc](https://github.com/amix/vimrc) files to make working faster and more comfortable.  My `.zprofile` has some basic settings such as:
 
 {% highlight ruby %}
 alias ls='ls -G -ltr'
@@ -46,7 +46,7 @@ sudo ln -s /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk /Library/Deve
 
 ## Python
 
-I use [conda](https://www.anaconda.com/download/) as standard. This comes with all of the basic packages including [jupyter-lab](https://jupyter.org). It's straightforward once you download the Apple Silicon (not x86) installation file. Then of course you can install all of your favourite packages, e.g.
+I use [conda](https://www.anaconda.com/download/) as standard. This comes with the core python-related packages including [jupyter-lab](https://jupyter.org). It's straightforward once you download the Apple Silicon (not x86) installation file. Then you are free tp install all of your favourite packages, e.g.
 
 {% highlight ruby %}
 pip install pymatgen ase phonopy smact matminer
@@ -54,20 +54,20 @@ pip install pymatgen ase phonopy smact matminer
 
 ## DFT: VASP
 
-I use a range of density functional theory (DFT) packages, but [VASP](https://www.vasp.at) is a robust standard. Thanks to [Alex](https://utf.github.io) for some of the tips used here. Taking the shiny 6.3.2, I untared the source code, and:
+I use a range of density functional theory (DFT) packages, but [VASP](https://www.vasp.at) is a robust standard. Thanks to [Alex](https://utf.github.io) for some of the tips used in getting this to work. Taking the shiny 6.3.2 version, I untared the source code, and:
 
 {% highlight ruby %}
 cd vasp.6.3.2
 cp ./arch/makefile.include.gnu_omp makefile.include
 {% endhighlight %}
 
-Then, `makefile.include` needs some tweaking, including:
+`makefile.include` needs some tweaking, including:
 
-- Change all instances of 'gcc' to 'gcc-12' and 'g++' to 'g++-12'
+- Change all instances of `gcc` to `gcc-12` and `g++` to `g++-12`
  
 - Add `-Dqd_emulate` to `CPP_OPTIONS`
 
-and then a modification of the library links to point to the homebrew installations:
+and then modify the library links to point to the homebrew installation:
 
 - Set `SCALAPACK_ROOT ?= /opt/homebrew/`
 
@@ -77,7 +77,7 @@ and then a modification of the library links to point to the homebrew installati
 
 To enable HDF5 support, uncomment that block of text and edit `HDF5_ROOT  ?= /opt/homebrew/`. I have copied my working `makefile.include` over [here](https://gist.github.com/aronwalsh/78962582fd17d5b50365a62679d1bc8d).
 
-Then `make all` and wait a few minutes. Check the outcome by running `mpirun -np 4 vasp_std` in the bin. You are treated to a warm hello.
+`make all` and wait a few minutes. Check the outcome by running `mpirun -np 4 vasp_std` in the bin. You are treated to a warm hello characteristic of the vaspmaster.
 
 <!-- wp:image -->
 <figure class="wp-block-image"><img src="{{ site.baseurl }}/assets/2023/vasp.png" alt="ASE" /></figure>
@@ -102,13 +102,11 @@ set(LIB_PATHS "/opt/homebrew/lib/ /opt/homebrew/Cellar/openblas/0.3.21/lib/" CAC
 set(LIBS "lapack blas scalapack" CACHE STRING "" FORCE)
 {% endhighlight %}
 
-The edited file is over [here](https://gist.github.com/aronwalsh/c8d601555d4b66473af516af8b4bb569).
-
-Then, simply:
+The edited file is over [here](https://gist.github.com/aronwalsh/c8d601555d4b66473af516af8b4bb569). Then, simply:
 
 {% highlight ruby %}
 cmake -C initial_cache.cmake ..
 make -j 4
 {% endhighlight %}
 
-Check the outcome with `mpirun -np 4 aims.210226.mpi.x` and happy computing.
+Check the outcome with `mpirun -np 4 aims.221103.scalapack.mpi.x` and happy computing.
