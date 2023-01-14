@@ -25,9 +25,18 @@ brew install gcc openmpi scalapack fftw qd openblas hdf5 cmake
 Set up your [zprofile](https://craftofcoding.wordpress.com/2022/02/28/the-basics-of-configuring-the-z-shell-on-a-mac/), [ssh config](http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/), and [vimrc](https://github.com/amix/vimrc) files to make working faster and more comfortable.  My `.zprofile` has some basic settings such as:
 
 {% highlight ruby %}
+#stack size
+ulimit -Ss unlimited
+
+#general mac
 alias ls='ls -G -ltr'
 export TERM=xterm-color
 alias cpu='echo time $(uptime) && echo $(sysctl -n hw.ncpu) cores on $(hostname)'
+
+#c/fortran
+export CC=gcc-12
+export CXX=g++-12
+export FC=gfortran
 {% endhighlight %}
 
 Later I will need C libraries that are in a non-standard location, so I find it useful to create the following link:
