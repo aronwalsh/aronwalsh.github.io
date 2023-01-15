@@ -4,7 +4,7 @@ title: macOS Big Sur for Computational Materials Science in 2021
 date: 2021-04-15 07:09:15.000000000 +01:00
 ---
 
-Will this be my final update for Intel Macs? Given the initial performance reports of Apple silicon, I hope so. 
+Will this be my final update for Intel Macs? Given the initial performance reports of Apple Silicon, I hope so. 
 This is a refresh of previous posts covering a clean install of macOS 11.2.1 (Big Sur) on an iMac Pro in April 2021. 
 
 ## Awaken UNIX

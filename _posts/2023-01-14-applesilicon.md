@@ -4,7 +4,7 @@ title:  Apple Silicon for Computational Materials Science
 date:   2023-01-14 16:11:22 +0000
 ---
 
-My first Apple laptop was a PowerBook running the PowerPC [G4](https://en.wikipedia.org/wiki/PowerPC_G4) processor. The transition to Intel x86 chips provided many opportunities, but they lost their edge over time to become efficient heat generators. So far, I am very impressed by the ARM [M2](https://en.wikipedia.org/wiki/Apple_silicon#Apple_M2) processor and its 20 billion transistors. It does take some effort to get everything nicely configured.
+My first Apple laptop was a PowerBook running the PowerPC [G4](https://en.wikipedia.org/wiki/PowerPC_G4) processor. The transition to Intel x86 chips provided many opportunities, but they lost their edge over time to become efficient heat generators. So far, I am very impressed by the ARM [M2](https://en.wikipedia.org/wiki/Apple_silicon#Apple_M2) processor and its 20 billion transistors. It does take some effort to get everything nicely configured. I am running macOS Ventura 13.1.
 
 <p align="center">
 <figure class="wp-block-image aligncenter"><img src="{{ site.baseurl }}/assets/2023/cpu.png" alt="CPU" /></figure>
@@ -118,4 +118,4 @@ cmake -C initial_cache.cmake ..
 make -j 4
 {% endhighlight %}
 
-Check the outcome with `mpirun -np 4 aims.221103.scalapack.mpi.x` and happy computing.
+Check the outcome with `mpirun -np 4 aims.221103.scalapack.mpi.x`. Happy computing.
