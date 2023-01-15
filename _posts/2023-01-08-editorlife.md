@@ -36,6 +36,4 @@ A few tips to get the editor on your side:
 
 - **Polish your text, figures, and references.** Back in the day, most journals used the services of hands-on copy editors that would sand down the rough edges of each accepted manuscript, including grammar fixes and figure edits. These days it is a rarity at society journals, so it’s up to the authors. My most common requests relate to font sizes in figures, which sometimes vary by orders of magnitude. It is best to aim for a uniform font size and style that can be read at journal scale.  There is some useful figure advice by my friends [Ram Seshadri](https://www.mrl.ucsb.edu/~seshadri/Seshadri-PreparingFigures-2018.pdf) and [Chris Hendon](https://pages.uoregon.edu/chendon/files/Making_figures.pdf), with much more hidden around the internet. 
 
-Finally, ACS Energy Letters has had a series of thought-provoking editorials over the past few years on scientific publishing, including some direct author advice. The latest on [Fewer Sandwich Papers, Please
-](https://pubs.acs.org/doi/10.1021/acsenergylett.2c02197) is a recommended read.
-
+Finally, ACS Energy Letters has had a series of thought-provoking editorials on different aspects of scientific publishing with direct author advice. Some recent ones that I recommend are [Fewer Sandwich Papers, Please](https://pubs.acs.org/doi/10.1021/acsenergylett.2c02197) and [How To Submit a Previously Rejected Manuscript](https://pubs.acs.org/doi/10.1021/acsenergylett.2c02724).

@@ -55,7 +55,7 @@ sudo ln -s /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk /Library/Deve
 
 ## Python
 
-I use [conda](https://www.anaconda.com/download/) as standard. This comes with the core python-related packages including [jupyter-lab](https://jupyter.org). It's straightforward once you download the Apple Silicon (not x86) installation file. Then you are free tp install all of your favourite packages, e.g.
+I use [conda](https://www.anaconda.com/download/) as standard. This comes with the core python-related packages including [jupyter-lab](https://jupyter.org). It's straightforward once you download the Apple Silicon (not x86) installation file. Then you are free to install all of your favourite packages, e.g.
 
 {% highlight ruby %}
 pip install pymatgen ase phonopy smact matminer sumo shakenbreak
