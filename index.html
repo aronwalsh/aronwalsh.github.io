@@ -1,49 +1,77 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finnegans Wake</title>
+    <style>
+        body {
+            background-color: black;
+            color: green;
+            font-family: "Courier New", monospace;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        #quote {
+            font-size: 1.5em;
+            max-width: 600px;
+            margin: auto;
+            margin-top: 100px; /* Extra space at the top */
+        }
+        a {
+            color: green;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <a id="quote" href="https://github.com/aronwalsh" target="_blank">Loading...</a>
 
-<div class="posts">
-  {% for post in paginator.posts %}
-    <article class="post">
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        <h1>{{ post.title }}</h1>
+    <script>
+        const quotes = [
+            "Sir Tristram, violer d’amores, fr’over the short sea...",
+            "Rot a peck of pa’s malt had Jhem or Shen...",
+            "A fall, a fall, a fall...",
+            "Bygmester Finnegan, of the Stuttering Hand...",
+            "What clashes here of wills gen wonts...",
+            "The oaks of ald now they lie in peat...",
+            "Ho, talk save us! My foos won’t moos...",
+            "One chap googling the holyboy’s thingabib...",
+            "And ever shall be...",
+            "First we feel, then we fall...",
+            "A way a lone a last a loved a long the...",
+            "Ere the sockson locked at the dure...",
+            "O, foenix culprit! Ex nickylow malo comes mickelmassed bonum...",
+            "Isn't it the truth now? Tell me the truth...",
+            "That’s the way we’ve always heard it should be...",
+            "The he and the she of it...",
+            "And they all drank free...",
+            "Soft morning, city! Lsp!",
+            "Humptyhillhead peats of Erinn...",
+            "Three quarks for Muster Mark!",
+            "The fall (bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthurnuk!)",
+            "Wipe your glosses with what you know...",
+            "What a methem she made! (a muddle!)",
+            "Temporarily his part so pained him...",
+            "The Vico road goes round and round to meet where terms begin...",
+            "They lived and laughed and loved and left...",
+            "I am not their self...",
+            "All space was darkness and spidery...",
+            "Dyoublong, as you are...",
+            "There extand by now one thousand and one stories...",
+            "Come days, come knights..."
+        ];
 
-        <div>
-          <p class="post_date">{{ post.date | date: "%B %e, %Y" }}</p>
-        </div>
-      </a>
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
+        function getRandomQuote() {
+            const date = new Date();
+            const index = (date.getDate() - 1) % quotes.length;
+            document.getElementById("quote").innerText = quotes[index];
+        }
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-
-  <!-- pagination -->
-  {% if paginator.total_pages > 1 %}
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
-    {% else %}
-      <span>&laquo; Prev</span>
-    {% endif %}
-
-    {% for page in (1..paginator.total_pages) %}
-      {% if page == paginator.page %}
-        <span class="webjeda">{{ page }}</span>
-      {% elsif page == 1 %}
-        <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-      {% else %}
-        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-      {% endif %}
-    {% endfor %}
-
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
-    {% else %}
-      <span>Next &raquo;</span>
-    {% endif %}
-  </div>
-  {% endif %}
-</div>
+        getRandomQuote();
+    </script>
+</body>
+</html>
