@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Debate Simulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #000000;
+            color: #00ff00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            max-width: 900px;
+            border: 4px solid #00ff00;
+            padding: 1.5rem;
+            background-color: #0a0a0a;
+            box-shadow: 0 0 15px #00ff00;
+            border-radius: 8px;
+        }
+        .header-title {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px #ff00ff;
+        }
+        .screen {
+            background-color: #000;
+            border: 4px solid #00ff00;
+            padding: 1rem;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        .characters {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            height: 55%; 
+        }
+        .character-box {
+            width: 150px;
+            height: 150px;
+            border: 4px solid #00ff00;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+        .character-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            image-rendering: pixelated;
+        }
+        .dialogue-box {
+            border: 4px solid #00ff00;
+            padding: 1rem;
+            height: 40%;
+            background-color: rgba(10, 10, 10, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            border-radius: 4px;
+            overflow-y: auto; 
+        }
+        .speaker-name {
+            font-size: 1rem;
+            color: #ff00ff;
+            margin-bottom: 0.5rem;
+        }
+        .dialogue-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .cursor {
+            display: inline-block;
+            background-color: #00ff00;
+            width: 10px;
+            height: 1.2rem;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { background-color: transparent; }
+            50% { background-color: #00ff00; }
+        }
+        .input-area {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        input, button {
+            font-family: 'Press Start 2P', cursive;
+            padding: 0.75rem;
+            border: 2px solid #00ff00;
+            background-color: #1a1a1a;
+            color: #00ff00;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            outline: none;
+        }
+        input:focus {
+            box-shadow: 0 0 10px #00ff00;
+        }
+        button {
+            cursor: pointer;
+            background-color: #003300;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        button:hover {
+            background-color: #005500;
+            box-shadow: 0 0 10px #00ff00;
+        }
+        button:disabled {
+            cursor: not-allowed;
+            background-color: #333;
+            color: #888;
+            border-color: #888;
+        }
+        .loader {
+            text-align: center;
+            font-size: 1rem;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="header-title">Scientific Debate Simulator</h1>
+        
+        <div class="screen">
+            <div class="characters">
+                <div class="character-box">
+                    <img src="https://placehold.co/150x150/ff00ff/000000?text=Mags\nCurie" alt="Maggie Curie">
+                </div>
+                <div class="character-box">
+                    <img src="https://placehold.co/150x150/00ffff/000000?text=Jerry\nDirac" alt="Jerry Dirac">
+                </div>
+            </div>
+            <div id="dialogue-box" class="dialogue-box">
+                <div id="speaker-name" class="speaker-name">System</div>
+                <div id="dialogue-text" class="dialogue-text">
+                    Enter your API key and a problem to begin...<span class="cursor"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input type="password" id="api-key-input" placeholder="Enter your Gemini API Key here">
+            <input type="text" id="problem-input" placeholder="e.g., The nature of aromaticity">
+            <button id="start-btn">Start Dialogue</button>
+            <div id="loader" class="loader" style="display: none;">Contacting Oracle...</div>
+        </div>
+    </div>
+
+    <script>
+        // DOM element references
+        const apiKeyInput = document.getElementById('api-key-input');
+        const problemInput = document.getElementById('problem-input');
+        const startBtn = document.getElementById('start-btn');
+        const loader = document.getElementById('loader');
+        const speakerNameElem = document.getElementById('speaker-name');
+        const dialogueTextElem = document.getElementById('dialogue-text');
+
+        // Character definitions with prompts that encourage originality
+        const characters = {
+            maggie: {
+                name: "Maggie Curie",
+                basePrompt: `You are Maggie Curie, a brilliant chemist. In this debate, you are direct, passionate, and defend your experimental viewpoint. Your arguments are grounded in empirical evidence. Keep your response to a single, sharp, intense sentence (20-40 words). **Crucially, avoid clichés and repetitive phrases; strive for original, insightful phrasing that reflects your deep intellect.**`,
+                speakerColor: "#ff00ff"
+            },
+            jerry: {
+                name: "Jerry Dirac",
+                basePrompt: `You are Jerry Dirac, a deeply analytical physicist. In this debate, you are precise, skeptical, and focused on logical and mathematical rigour. You dismantle arguments lacking a sound theoretical basis. Keep your response to a single, sharp, intense sentence (20-40 words). **Crucially, avoid clichés and repetitive phrases; strive for original, insightful phrasing that reflects your deep intellect.**`,
+                speakerColor: "#00ffff"
+            }
+        };
+
+        function typeWriter(text, onComplete) {
+            dialogueTextElem.innerHTML = '';
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    dialogueTextElem.innerHTML = text.substring(0, i + 1) + '<span class="cursor"></span>';
+                    i++;
+                    setTimeout(type, 30);
+                } else {
+                    dialogueTextElem.innerHTML = text;
+                    if (onComplete) onComplete();
+                }
+            }
+            type();
+        }
+
+        async function callLLM(apiKey, prompt, history, maxRetries = 3) {
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+            
+            const payload = {
+                contents: [...history, { role: "user", parts: [{ text: prompt }] }],
+                "generationConfig": {
+                    "temperature": 0.9,
+                    "topP": 0.95,
+                    "topK": 40,
+                    "maxOutputTokens": 100,
+                }
+            };
+            
+            let attempt = 0;
+            while (attempt < maxRetries) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        if (response.status === 400) {
+                            const errorData = await response.json();
+                            console.error("API Error (400):", errorData);
+                            return "Error: Invalid API Key or malformed request. Please check the key and try again.";
+                        }
+                        throw new Error(`API request failed with status ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates[0].content && result.candidates[0].content.parts[0]) {
+                        return result.candidates[0].content.parts[0].text;
+                    } else {
+                        console.warn("API response blocked or invalid:", result);
+                        return "My response was blocked. Let's try a different angle.";
+                    }
+                } catch (error) {
+                    console.error(`Attempt ${attempt + 1} failed:`, error);
+                    attempt++;
+                    if (attempt < maxRetries) {
+                        const delay = Math.pow(2, attempt) * 1000;
+                        await new Promise(res => setTimeout(res, delay));
+                    } else {
+                        return "I seem to be having trouble connecting to my thoughts right now.";
+                    }
+                }
+            }
+        }
+
+        async function startDialogue() {
+            const apiKey = apiKeyInput.value.trim();
+            const problem = problemInput.value.trim();
+            
+            if (!apiKey) {
+                typeWriter("Please enter your API key before starting.", null);
+                return;
+            }
+            if (!problem) {
+                typeWriter("Please enter a scientific problem to debate.", null);
+                return;
+            }
+
+            startBtn.disabled = true;
+            problemInput.disabled = true;
+            apiKeyInput.disabled = true;
+            loader.style.display = 'block';
+
+            let conversationHistory = [];
+            let lastResponse = "";
+
+            try {
+                const numTurns = Math.floor(Math.random() * 2) + 3; // 3-4 exchange turns
+                const speakers = [characters.maggie, characters.jerry];
+                let currentSpeakerIndex = Math.round(Math.random());
+
+                for (let i = 0; i <= numTurns; i++) {
+                    const currentSpeaker = speakers[currentSpeakerIndex];
+                    let turnPrompt = "";
+
+                    if (i === 0) {
+                        turnPrompt = `The debate topic is "${problem}". Deliver your opening statement.`;
+                    } else if (i === numTurns) {
+                        const opponent = speakers[1 - currentSpeakerIndex];
+                        turnPrompt = `The debate is ending. Summarise your position against ${opponent.name}'s points ("${lastResponse}") and propose a collaborative next step.`;
+                    } else {
+                        const opponent = speakers[1 - currentSpeakerIndex];
+                        turnPrompt = `Your opponent, ${opponent.name}, just argued: "${lastResponse}". Formulate your concise, powerful rebuttal.`;
+                    }
+                    
+                    const response = await runTurn(apiKey, currentSpeaker, turnPrompt, conversationHistory);
+                    lastResponse = response;
+                    
+                    conversationHistory.push({ role: "user", parts: [{ text: currentSpeaker.basePrompt + "\n\n" + turnPrompt }] });
+                    conversationHistory.push({ role: "model", parts: [{ text: response }] });
+
+                    currentSpeakerIndex = 1 - currentSpeakerIndex;
+                }
+
+            } catch (error) {
+                console.error("An error occurred during the dialogue:", error);
+                speakerNameElem.textContent = "System Error";
+                speakerNameElem.style.color = "#ff0000";
+                typeWriter("A critical error occurred. Please check the console.", null);
+            } finally {
+                startBtn.disabled = false;
+                problemInput.disabled = false;
+                apiKeyInput.disabled = false;
+                problemInput.value = '';
+                loader.style.display = 'none';
+                speakerNameElem.textContent = "System";
+                speakerNameElem.style.color = "#00ff00";
+                typeWriter("Debate complete. Enter a new problem.", null);
+            }
+        }
+
+        async function runTurn(apiKey, character, prompt, history) {
+            speakerNameElem.textContent = `${character.name} is thinking...`;
+            speakerNameElem.style.color = character.speakerColor;
+            dialogueTextElem.innerHTML = '<span class="cursor"></span>';
+            
+            const fullPrompt = `${character.basePrompt}\n\n${prompt}`;
+            const response = await callLLM(apiKey, fullPrompt, history);
+            
+            if (response.startsWith("Error:")) {
+                 typeWriter(response, null);
+                 throw new Error("API Key or Request Error");
+            }
+            
+            speakerNameElem.textContent = character.name;
+            await new Promise(resolve => typeWriter(response, resolve));
+            await new Promise(res => setTimeout(res, 3500));
+            return response;
+        }
+
+        startBtn.addEventListener('click', startDialogue);
+        problemInput.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') startBtn.click();
+        });
+        apiKeyInput.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') startBtn.click();
+        });
+    </script>
+</body>
+</html>
